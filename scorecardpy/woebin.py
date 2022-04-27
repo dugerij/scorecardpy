@@ -112,7 +112,7 @@ def dtm_binning_sv(dtm, breaks, spl_val):
               sv_df['value'].astype(dtm['value'].dtypes).astype(str))
             # sv_df = sv_df.assign(value = lambda x: x.value.astype(dtm['value'].dtypes))
         # dtm_sv & dtm
-        # dtm_sv = pd.merge(dtm.fillna("missing"), sv_df[['value']].fillna("missing"), how='inner', on='value', right_index=True)
+        # dtm_sv = pd.merge(dtm.fillna("missing"), sv_df[['value']].fillna("missing"), how='inner', on='value')
         if None in dtm.index.names and len(dtm.index.names)==1: 
             dtm_index='index'
         elif None in dtm.index.names and len(dtm.index.names)>1:
